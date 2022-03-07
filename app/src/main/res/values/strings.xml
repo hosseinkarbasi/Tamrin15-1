@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CityListWithRecyclerView</string>
+    <string name="show_selected_cities">Show Selected Cities</string>
+</resources>

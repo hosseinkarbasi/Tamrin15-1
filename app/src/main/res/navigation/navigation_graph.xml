@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listOfCitiesFragment">
+
+    <fragment
+        android:id="@+id/listOfCitiesFragment"
+        android:name="com.example.citylistwithrecyclerview.ui.listcities.ListOfCitiesFragment"
+        android:label="ListOfCitiesFragment" >
+        <action
+            android:id="@+id/action_listOfCitiesFragment_to_showSelectedCitiesFragment"
+            app:destination="@id/showSelectedCitiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showSelectedCitiesFragment"
+        android:name="com.example.citylistwithrecyclerview.ui.selectedcities.ShowSelectedCitiesFragment"
+        android:label="ShowSelectedCitiesFragment" />
+</navigation>
