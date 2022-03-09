@@ -27,7 +27,7 @@ class ShowSelectedCitiesFragment : Fragment(R.layout.show_selected_cities) {
         rv.adapter = adapter
 
         viewModel.listOfSelectedCities.observe(viewLifecycleOwner) {
-//            listOfCitiesSelected.clear()
+            listOfCitiesSelected.clear()
             listOfCitiesSelected.addAll(it)
             adapter.notifyDataSetChanged()
         }

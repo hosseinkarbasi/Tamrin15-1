@@ -7,14 +7,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.selection.ItemDetailsLookup
 import androidx.recyclerview.selection.SelectionTracker
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.citylistwithrecyclerview.R
 
 class MainAdapter() :
     RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
 
-    var tracker: SelectionTracker<Long>? = null
     var listCities: List<String> = arrayListOf()
+    var tracker: SelectionTracker<Long>? = null
 
     init {
         setHasStableIds(true)
@@ -35,22 +36,9 @@ class MainAdapter() :
         tracker?.let {
             holder.bind(city, it.isSelected(position.toLong()))
         }
-
-
-//        holder.cityName.text = city
-//
-//        val parent = holder.cityName.parent as CardView
-//        if (tracker!!.isSelected(position.toLong())) {
-//            parent.background = ColorDrawable(
-//                Color.parseColor("#FF1100")
-//            )
-//        } else {
-//            parent.background = ColorDrawable(Color.WHITE)
-//        }
     }
 
     override fun getItemCount(): Int = listCities.count()
-
 
     inner class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var cityName: TextView = view.findViewById(R.id.tvShowCities)
